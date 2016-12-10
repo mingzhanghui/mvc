@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+body {
+    background-color: silver;
+}
+
+a {
+    text-decoration: none;
+}
+
+#header, #footer {
+    color: white;
+    background: #11407d;
+}
+
+#header {
+    padding: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+#footer {
+    padding: 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#header a {
+    color: white;
+    padding: 6px 12px;
+    font-weight: 500;
+    background-color: #4471aa;
+}
+#header a:hover {
+    background: #4b8bd4;
+}
+
+#content {
+    background: #fff;
+    padding: 20px;
+    min-height: 200px;
+}
+
