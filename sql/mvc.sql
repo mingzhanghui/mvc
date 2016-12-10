@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS mvc;
 -- MySQL dump 10.16  Distrib 10.1.16-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: mvc
@@ -48,6 +49,32 @@ INSERT INTO `data` VALUES (3,'f'),(4,'test'),(5,'f'),(6,'fff'),(7,'hey'),(8,'aaa
 UNLOCK TABLES;
 
 --
+-- Table structure for table `person`
+--
+
+DROP TABLE IF EXISTS `person`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `person` (
+  `personid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `age` tinyint(3) unsigned NOT NULL,
+  `gender` enum('m','f') NOT NULL,
+  PRIMARY KEY (`personid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `person`
+--
+
+LOCK TABLES `person` WRITE;
+/*!40000 ALTER TABLE `person` DISABLE KEYS */;
+INSERT INTO `person` VALUES (2,'Jesse',24,'f'),(3,'Joe',22,'m'),(4,'Jenny',45,'f');
+/*!40000 ALTER TABLE `person` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user`
 --
 
@@ -60,7 +87,7 @@ CREATE TABLE `user` (
   `password` varchar(64) NOT NULL,
   `role` enum('default','admin','owner') NOT NULL DEFAULT 'default',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COMMENT='mvc users login';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='mvc users login';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-09 11:28:06
+-- Dump completed on 2016-12-10 20:07:48
